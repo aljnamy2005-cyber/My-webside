@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">Ali.dev</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-controls">
+            <!-- Dark / Light -->
+            <div class="theme-toggle" id="themeToggle">
+                <span class="circle"></span>
+            </div>
+
+            <!-- Hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="home">
+    <div class="hero-content">
+        <h1>Hi, I'm <span>Ali Mohammed</span></h1>
+        <p>I'm a <span id="typing"></span></p>
+        <button class="btn primary" onclick="scrollToProjects()">View My Work</button>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        نا طالب صيدلة مهتم بتطوير المواقع الإلكترونية
+        والذكاء الاصطناعي، وأسعى إلى بناء مهارات تقنية قوية
+        إلى جانب دراستي الأكاديمية.  
+        هذا الموقع الشخصي يهدف إلى عرض مشاريعي،
+        مهاراتي، وطموحي في المجال التقني.
+    
+    </p>
+</section>
+<section id="about" class="section" dir="rtl">
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card hidden">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive website using HTML, CSS & JS</p>
+        </div>
+        <div class="card hidden">
+            <h3>AI Tools</h3>
+            <p>Small AI-based utilities and scripts</p>
+        </div>
+        <div class="card hidden">
+            <h3>Pharmacy Content</h3>
+            <p>Educational pharmaceutical projects</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: ali@email.com</p>
+</section>
+
+<footer>
+    © 2026 Ali Mohammed
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
