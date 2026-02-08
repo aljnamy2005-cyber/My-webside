@@ -344,18 +344,23 @@ body.light .theme-toggle .circle {
 }
 
 @media (max-width: 600px) {
-    .nav-links {
-        opacity: 0;
-        transform: translateY(-10px);
+
+    .home {
+        min-height: 85vh;      /* بدل 100vh */
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .section {
+        min-height: auto;     /* يلغي طول الشاشة */
+        padding: 90px 25px;   /* مسافات أنعم */
+    }
+
+    section + section {
+        margin-top: 30px;     /* يقلل الفراغ بين الأقسام */
     }
 }
-.home {
-    min-height: 100vh;
-    padding-top: 140px;
-}
-section + section {
-    margin-top: 60px;
-}
+
 .section[dir="rtl"] {
     font-family: "Tahoma", "Segoe UI", sans-serif;
 }
@@ -406,4 +411,90 @@ section + section {
 
 body.light .theme-toggle .circle {
     transform: rotate(360deg) scale(1.05);
+}
+@media (max-width: 600px) {
+
+    body {
+        text-align: center;
+    }
+
+    .home,
+    .section {
+        text-align: center;
+    }
+
+    .home h1,
+    .home p,
+    .section h2,
+    .section p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section p {
+        max-width: 100%;
+    }
+}
+/* Page transition animation */
+.section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: 
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 50px;
+}
+
+.project-card {
+    padding: 35px 25px;
+    border-radius: 18px;
+    background: rgba(2,6,23,0.8);
+    color: #e5e7eb;
+    border: 1px solid rgba(56,189,248,0.3);
+    box-shadow:
+        0 0 15px rgba(56,189,248,0.15),
+        0 0 40px rgba(56,189,248,0.05);
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+.project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+        0 0 25px rgba(56,189,248,0.6),
+        0 0 60px rgba(56,189,248,0.4),
+        0 0 120px rgba(56,189,248,0.2);
+}
+@keyframes neonPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(56,189,248,0.2);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(56,189,248,0.6),
+            0 0 80px rgba(56,189,248,0.3);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(56,189,248,0.2);
+    }
+}
+
+.project-card {
+    animation: neonPulse 4s infinite;
+}
+.projects h2 {
+    color: #38bdf8;
+    text-shadow:
+        0 0 10px rgba(56,189,248,0.6),
+        0 0 30px rgba(56,189,248,0.4);
 }

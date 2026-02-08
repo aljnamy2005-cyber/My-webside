@@ -40,7 +40,9 @@
     <div class="hero-content">
         <h1>Hi, I'm <span>Ali Mohammed</span></h1>
         <p>I'm a <span id="typing"></span></p>
-        <button class="btn primary" onclick="scrollToProjects()">View My Work</button>
+        <button class="btn primary" id="viewWorkBtn">View My Work</button>
+
+
 
     </div>
 </section>
@@ -60,34 +62,63 @@
 <section id="about" class="section" dir="rtl">
 
 <!-- PROJECTS -->
-<section id="projects" class="section">
+<section id="projects" class="section projects">
     <h2>Projects</h2>
-    <div class="projects">
-        <div class="card hidden">
-            <h3>Portfolio Website</h3>
-            <p>Modern responsive website using HTML, CSS & JS</p>
-        </div>
-        <div class="card hidden">
-            <h3>AI Tools</h3>
-            <p>Small AI-based utilities and scripts</p>
-        </div>
-        <div class="card hidden">
-            <h3>Pharmacy Content</h3>
-            <p>Educational pharmaceutical projects</p>
-        </div>
+<section>
+    <div class="projects-grid">
+        <div class="project-card">Project One</div>
+        <div class="project-card">Project Two</div>
+        <div class="project-card">Project Three</div>
+   
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
     <h2>Contact</h2>
-    <p>Email: ali@email.com</p>
+    <p>Email: aljnamy2005@email.com</p>
 </section>
 
 <footer>
-    © 2026 Ali Mohammed
+    © 2026 Ali Mohammed | Web developer
 </footer>
 
 <script src="script.js"></script>
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, {
+    threshold: 0.2
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* زر View My Work */
+    const viewWorkBtn = document.getElementById("viewWorkBtn");
+    const projectsSection = document.getElementById("projects");
+
+    if (viewWorkBtn && projectsSection) {
+        viewWorkBtn.addEventListener("click", () => {
+            projectsSection.scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    }
+
+});
+</script>
+
+
 </body>
 </html>
